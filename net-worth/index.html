@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Net worth engine — rahinic</title>
+  <meta name="description" content="A synthetic-persona net worth simulation: German-bank CSVs, ETF Monte Carlo with German tax, and Indian vs German gold.">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/assets/site.css">
+</head>
+<body>
+  <header class="site">
+    <div class="wrap">
+      <a class="brand" href="/">rahinic</a>
+      <nav aria-label="Main">
+        <a href="/">Home</a>
+        <a href="/net-worth/" aria-current="page">Net worth engine</a>
+      </nav>
+    </div>
+  </header>
+  <div class="disclaimer" role="note">
+    <div class="wrap">Everything on this site is an <strong>illustrative simulation using synthetic data</strong>. It is not financial advice.</div>
+  </div>
+
+  <main class="wrap">
+    <h1>Net worth engine</h1>
+    <p class="lede">What happens to €30k and €1,400 a month, over decades, for one invented person in Berlin?</p>
+
+    <h2>Questions it will answer</h2>
+    <ol>
+      <li><strong>Data:</strong> can a deliberately messy German-bank CSV export be turned into a clean net worth timeline?</li>
+      <li><strong>ETFs:</strong> after Abgeltungsteuer, Vorabpauschale and TER, does a 5-ETF portfolio beat a 2-ETF one, in nominal and real terms, across 10,000 simulated paths?</li>
+      <li><strong>Gold:</strong> does an Indian gold scheme priced in INR beat German gold priced in EUR, once USD gold, USD/INR, EUR/USD and inflation are all moving, and does the answer change with the currency you plan to spend in?</li>
+    </ol>
+
+    <h2>Status</h2>
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th>Part</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr><td><a href="/net-worth/persona.html">Persona sheet</a></td><td><span class="status done">Published</span></td></tr>
+          <tr><td>Synthetic bank statements (salary + savings, German CSV style)</td><td><span class="status planned">Planned</span></td></tr>
+          <tr><td>dbt models and net worth timeline</td><td><span class="status planned">Planned</span></td></tr>
+          <tr><td>ETF comparison: 2 vs 5, Monte Carlo, German tax</td><td><span class="status planned">Planned</span></td></tr>
+          <tr><td>Gold: Indian scheme vs German gold, spend-currency toggle</td><td><span class="status planned">Planned</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>Stack</h2>
+    <p>Python, DuckDB, dbt-core, GitHub Actions for CI, static HTML dashboards. All free.</p>
+  </main>
+
+  <footer class="site">
+    <div class="wrap">Illustrative simulation, synthetic data, not financial advice.</div>
+  </footer>
+</body>
+</html>

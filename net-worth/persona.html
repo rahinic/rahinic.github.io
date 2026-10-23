@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Persona sheet — Net worth engine</title>
+  <meta name="description" content="The synthetic persona behind the net worth engine: income, starting assets and monthly investing.">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/assets/site.css">
+</head>
+<body>
+  <header class="site">
+    <div class="wrap">
+      <a class="brand" href="/">rahinic</a>
+      <nav aria-label="Main">
+        <a href="/">Home</a>
+        <a href="/net-worth/" aria-current="page">Net worth engine</a>
+      </nav>
+    </div>
+  </header>
+  <div class="disclaimer" role="note">
+    <div class="wrap">Everything on this site is an <strong>illustrative simulation using synthetic data</strong>. It is not financial advice.</div>
+  </div>
+
+  <main class="wrap">
+    <p><a href="/net-worth/">← Net worth engine</a></p>
+    <h1>Persona sheet</h1>
+    <p class="lede">One invented person. Every simulation on this site starts from the facts below.</p>
+
+    <h2>Who</h2>
+    <table>
+      <tbody>
+        <tr><th scope="row">Label</th><td>Kiran (synthetic; a name chosen for convenience, not a real person)</td></tr>
+        <tr><th scope="row">Age</th><td>35</td></tr>
+        <tr><th scope="row">Gender</th><td>Unspecified (they/them)</td></tr>
+        <tr><th scope="row">Background</th><td>Indian origin</td></tr>
+        <tr><th scope="row">Lives in</th><td>Berlin, Germany</td></tr>
+      </tbody>
+    </table>
+
+    <h2>Income</h2>
+    <table>
+      <tbody>
+        <tr><th scope="row">Gross salary</th><td>€85,000 per year</td></tr>
+        <tr><th scope="row">Raises</th><td>+10% every 3 years, applied as a step, not spread evenly</td></tr>
+      </tbody>
+    </table>
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th>Years from start</th><th class="num">Gross per year</th></tr></thead>
+        <tbody>
+          <tr><td>0–2</td><td class="num">€85,000</td></tr>
+          <tr><td>3–5</td><td class="num">€93,500</td></tr>
+          <tr><td>6–8</td><td class="num">€102,850</td></tr>
+          <tr><td>9–11</td><td class="num">€113,135</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>Starting position</h2>
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th>Asset</th><th class="num">Amount</th></tr></thead>
+        <tbody>
+          <tr><td>ETFs</td><td class="num">€15,000</td></tr>
+          <tr><td>Savings account</td><td class="num">€12,000</td></tr>
+          <tr><td>Gold</td><td class="num">€3,000</td></tr>
+        </tbody>
+        <tfoot><tr><td>Net worth</td><td class="num">€30,000</td></tr></tfoot>
+      </table>
+    </div>
+
+    <h2>Monthly investing</h2>
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th>Into</th><th class="num">Per month</th></tr></thead>
+        <tbody>
+          <tr><td>ETFs</td><td class="num">€1,200</td></tr>
+          <tr><td>Gold</td><td class="num">€200</td></tr>
+        </tbody>
+        <tfoot><tr><td>Total</td><td class="num">€1,400</td></tr></tfoot>
+      </table>
+    </div>
+    <p>Both amounts are fixed in nominal euros. They do not rise with inflation or with raises, so in real terms they shrink over time.</p>
+
+    <h2>Bank data</h2>
+    <p>Two synthetic accounts, exported in a German-bank CSV style and messy on purpose: a salary (current) account and a savings account.</p>
+
+    <h2>Still to be confirmed</h2>
+    <p>These are my proposed defaults, not part of the brief. They will change if you change them.</p>
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th>Item</th><th>Proposed</th></tr></thead>
+        <tbody>
+          <tr><td>Simulation start</td><td>1 January 2026</td></tr>
+          <tr><td>Horizon</td><td>30 years (to age 65)</td></tr>
+          <tr><td>Tax profile</td><td>Single, tax class 1, no church tax, statutory health insurance</td></tr>
+          <tr><td>Leftover cash each month</td><td>Goes to the savings account</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </main>
+
+  <footer class="site">
+    <div class="wrap">Illustrative simulation, synthetic data, not financial advice.</div>
+  </footer>
+</body>
+</html>
