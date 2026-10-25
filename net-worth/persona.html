@@ -25,7 +25,7 @@
   <main class="wrap">
     <p><a href="/net-worth/">← Net worth engine</a></p>
     <h1>Persona sheet</h1>
-    <p class="lede">One invented person. Every simulation on this site starts from the facts below.</p>
+    <p class="lede">One invented person. Every simulation on this site starts from the facts below. This is version 3.</p>
 
     <h2>Who</h2>
     <table>
@@ -42,21 +42,23 @@
     <h2>Income</h2>
     <table>
       <tbody>
-        <tr><th scope="row">Gross salary</th><td>€85,000 per year</td></tr>
-        <tr><th scope="row">Raises</th><td>+10% every 3 years, applied as a step, not spread evenly</td></tr>
+        <tr><th scope="row">Gross salary</th><td>€50,000 per year</td></tr>
+        <tr><th scope="row">Raises</th><td>+10% every 3 years (nominal), applied as a step, not spread evenly</td></tr>
       </tbody>
     </table>
     <div class="table-scroll">
       <table>
-        <thead><tr><th>Years from start</th><th class="num">Gross per year</th></tr></thead>
+        <thead><tr><th>Years from start</th><th class="num">Gross per year</th><th class="num">Net per month</th></tr></thead>
         <tbody>
-          <tr><td>0–2</td><td class="num">€85,000</td></tr>
-          <tr><td>3–5</td><td class="num">€93,500</td></tr>
-          <tr><td>6–8</td><td class="num">€102,850</td></tr>
-          <tr><td>9–11</td><td class="num">€113,135</td></tr>
+          <tr><td>0–2</td><td class="num">€50,000</td><td class="num">€2,690</td></tr>
+          <tr><td>3–5</td><td class="num">€55,000</td><td class="num">€2,909</td></tr>
+          <tr><td>6–8</td><td class="num">€60,500</td><td class="num">€3,145</td></tr>
+          <tr><td>9–11</td><td class="num">€66,550</td><td class="num">€3,400</td></tr>
         </tbody>
       </table>
     </div>
+    <p>Net pay is computed from gross with a simplified German tax and social-contribution function (<a href="https://github.com/rahinic/net-worth-engine/blob/main/persona/tax.py">source</a>), using 2025 rules for tax class IV with no church tax, statutory health insurance and no children. The net figures above ignore inflation.</p>
+    <p>The brief asked for about €3,000 net a month. The function gives about €2,690, so every monthly amount below was cut by the same factor (about 0.897) to fit.</p>
 
     <h2>Starting position</h2>
     <div class="table-scroll">
@@ -71,25 +73,33 @@
       </table>
     </div>
 
-    <h2>Monthly investing</h2>
+    <h2>Monthly budget</h2>
     <div class="table-scroll">
       <table>
-        <thead><tr><th>Into</th><th class="num">Per month</th></tr></thead>
+        <thead><tr><th>Item</th><th class="num">Per month</th></tr></thead>
         <tbody>
-          <tr><td>ETFs</td><td class="num">€1,000</td></tr>
-          <tr><td>Gold</td><td class="num">€200</td></tr>
-          <tr><td>Altersvorsorgedepot (from January 2027)</td><td class="num">€150</td></tr>
+          <tr><td>ETF savings plan</td><td class="num">€538</td></tr>
+          <tr><td>Indian gold scheme</td><td class="num">€90</td></tr>
+          <tr><td>Fixed costs (rent, utilities, insurance, phone), approximate</td><td class="num">€1,210</td></tr>
+          <tr><td>Variable costs (groceries, leisure, transport, other), approximate</td><td class="num">€852</td></tr>
         </tbody>
-        <tfoot>
-          <tr><td>Total until December 2026</td><td class="num">€1,200</td></tr>
-          <tr><td>Total from January 2027</td><td class="num">€1,350</td></tr>
-        </tfoot>
+        <tfoot><tr><td>Total</td><td class="num">€2,690</td></tr></tfoot>
       </table>
     </div>
-    <p>Both amounts are fixed in nominal euros. They do not rise with inflation or with raises, so in real terms they shrink over time.</p>
+    <p>Costs grow with inflation. Contributions stay flat in nominal euros, so in real terms they shrink, except in the third scenario below. At the start there is no surplus. Raises lift net pay, so a surplus appears later and goes to the savings account.</p>
 
-    <h2>Altersvorsorgedepot</h2>
-    <p>From January 2027 the persona also pays €150 a month into the new state-backed Altersvorsorgedepot, modelled with the full rules: the state subsidy (up to €540 a year), the cost cap and tax only at payout. The rules come from consumer-finance summaries of the 2026 reform law, not from the law text, and are assumptions that could change.</p>
+    <h2>Scenarios</h2>
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th>Scenario</th><th>Contributions</th><th>Returns</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td>Flat in nominal terms</td><td>Historical</td></tr>
+          <tr><td>2</td><td>Flat in nominal terms</td><td>Historical minus 2 percentage points</td></tr>
+          <tr><td>3</td><td>Grow with salary (+10% at each raise)</td><td>Historical</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>The return figures are not set yet.</p>
 
     <h2>Bank data</h2>
     <p>Two synthetic accounts, exported in a German-bank CSV style and messy on purpose: a salary (current) account and a savings account.</p>
@@ -98,31 +108,12 @@
     <p>These were not in the original brief. They were proposed and then approved.</p>
     <div class="table-scroll">
       <table>
-        <thead><tr><th>Item</th><th>Proposed</th></tr></thead>
+        <thead><tr><th>Item</th><th>Value</th></tr></thead>
         <tbody>
           <tr><td>Simulation start</td><td>1 January 2024</td></tr>
           <tr><td>Horizon</td><td>30 years (to age 65)</td></tr>
-          <tr><td>Tax profile</td><td>Married, filing jointly, both in tax class IV, no church tax, statutory health insurance</td></tr>
-          <tr><td>Leftover cash each month</td><td>Net pay minus spending minus investing, goes to the savings account</td></tr>
+          <tr><td>Leftover cash each month</td><td>Net pay minus costs minus contributions, goes to the savings account</td></tr>
         </tbody>
-      </table>
-    </div>
-
-    <h2>Monthly spending</h2>
-    <p>Pooja's half of the household. Amounts are estimates and grow with inflation.</p>
-    <div class="table-scroll">
-      <table>
-        <thead><tr><th>Item</th><th class="num">Per month</th></tr></thead>
-        <tbody>
-          <tr><td>Rent including heating and utilities</td><td class="num">€900</td></tr>
-          <tr><td>Electricity, internet, phone, broadcast fee</td><td class="num">€100</td></tr>
-          <tr><td>Groceries</td><td class="num">€400</td></tr>
-          <tr><td>Transport</td><td class="num">€60</td></tr>
-          <tr><td>Insurance</td><td class="num">€30</td></tr>
-          <tr><td>Recreation, dining, travel</td><td class="num">€450</td></tr>
-          <tr><td>Clothes and everything else</td><td class="num">€250</td></tr>
-        </tbody>
-        <tfoot><tr><td>Total</td><td class="num">€2,190</td></tr></tfoot>
       </table>
     </div>
   </main>
